@@ -1,0 +1,31 @@
+name: Test
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  check-package:
+    name: Check Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.0.1
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: |
+          corepack enable pnpm
+          corepack pnpm install
+
+      - name: Check Format
+        run: |
+          corepack pnpm format
+          git diff --exit-code HEAD
+
+      - name: Check Lint
+        run: corepack pnpm check
