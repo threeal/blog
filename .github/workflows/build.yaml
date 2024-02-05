@@ -18,12 +18,10 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: |
-          corepack enable pnpm
-          corepack pnpm install
+        uses: threeal/yarn-install-action@v1.0.0
 
       - name: Build Site
-        run: corepack pnpm build
+        run: corepack yarn build
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4.3.0

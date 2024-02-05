@@ -18,14 +18,12 @@ jobs:
           node-version: 20
 
       - name: Install Dependencies
-        run: |
-          corepack enable pnpm
-          corepack pnpm install
+        uses: threeal/yarn-install-action@v1.0.0
 
       - name: Check Format
         run: |
-          corepack pnpm format
+          corepack yarn format
           git diff --exit-code HEAD
 
       - name: Check Lint
-        run: corepack pnpm check
+        run: corepack yarn check
