@@ -3,6 +3,7 @@
 !.example*
 !.git*
 !.npm*
+!.nvmrc
 !.prettier*
 
 dist
