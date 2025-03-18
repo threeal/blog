@@ -17,15 +17,16 @@ jobs:
         with:
           node-version-file: .nvmrc
 
+      - name: Setup pnpm
+        uses: threeal/setup-pnpm-action@v1.0.0
+
       - name: Install Dependencies
-        run: |
-          corepack enable pnpm
-          corepack pnpm install
+        run: pnpm install
 
       - name: Check Format
         run: |
-          corepack pnpm format
+          pnpm format
           git diff --exit-code HEAD
 
       - name: Check Lint
-        run: corepack pnpm check
+        run: pnpm check

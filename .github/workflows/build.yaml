@@ -17,13 +17,14 @@ jobs:
         with:
           node-version-file: .nvmrc
 
+      - name: Setup pnpm
+        uses: threeal/setup-pnpm-action@v1.0.0
+
       - name: Install Dependencies
-        run: |
-          corepack enable pnpm
-          corepack pnpm install
+        run: pnpm install
 
       - name: Build Site
-        run: corepack pnpm build
+        run: pnpm build
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4.6.1
