@@ -2,8 +2,7 @@
 !.eslint*
 !.example*
 !.git*
-!.npm*
-!.nvmrc
+!.npmrc
 !.prettier*
 
 dist
