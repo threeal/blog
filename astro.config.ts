@@ -1,11 +1,11 @@
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import fs from "fs";
-import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
-import sitemap from "@astrojs/sitemap";
-import icon from "astro-icon";
-import remarkUnwrapImages from "remark-unwrap-images";
 import rehypeExternalLinks from "rehype-external-links";
+import remarkUnwrapImages from "remark-unwrap-images";
 
 // https://astro.build/config
 export default defineConfig({
